@@ -65,4 +65,33 @@ class Student {
 		}
 		return totalCredits;
 	}
+	class Faculty{
+		List<Student> lista = new ArrayList<Student>();
+		String FacultyName;
+
+		double AverageGrade(){
+			double avg;
+			double totalAvg = 0;
+			for(Student s : lista){
+				double avgStudent = s.getAverage();
+				totalAvg += avgStudent;
+			}
+			avg = totalAvg / lista.size();
+			return avg;
+
+		}
+
+		double AverageCredits(){
+			double totalAvg = 0;
+			double avgCredits;
+			for(Student s : lista){
+				double cdeditStudent = s.ECTSCredits();
+				totalAvg += cdeditStudent;
+			}
+			avgCredits = totalAvg / lista.size();
+			return  avgCredits;
+
+
+		}
+	}
 }
